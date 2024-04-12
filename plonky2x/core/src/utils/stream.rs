@@ -10,10 +10,6 @@ impl<T> Stream<T> {
     }
 
     pub fn read_exact(&mut self, len: usize) -> &[T] {
-        println!("test-len {:?}", len);
-        println!("test-position {:?}", self.position);
-        println!("test-data-len {:?}", self.data.len());
-
         if (self.position + len) > self.data.len() {
             panic!("Not enough elements in Stream");
         }
